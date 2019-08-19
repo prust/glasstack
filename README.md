@@ -1,6 +1,6 @@
 # Neutrino
 
-A minimalistic, zero-abstraction runtime for desktop applications.
+A lightweight, zero-abstraction runtime for desktop applications.
 
 Neutrino consists of a default set of C libraries and Javascript bindings for them so developers can write applications using Javascript and/or C. The following libraries are planned:
 
