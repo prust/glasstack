@@ -16,7 +16,7 @@ Neutrino consists of a default set of C libraries and Javascript bindings for th
   * [ ] bindings
 * [ ] [GLFM](https://github.com/brackeen/glfm) (Mobile OpenGL support)
 
-## Javascript Engine
+## Duktape Javascript Engine
 
 Neutrino embeds the [duktape](https://duktape.org) javascript engine because it is easier to compile and easier to integrate with than complex engines like v8, yet it has robust support for ECMAScript 5 and partial support for ECMAScript 6+. We intentionally opted for a simpler non-JIT engine because we believe that the overall performance and maintainability of the application stack is better when performance-critical routines are written in C and when application developers understand the performance characteristics and tradeoffs of low-level code.
 
