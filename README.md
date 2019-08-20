@@ -34,7 +34,7 @@ Users should be able to easily:
 
 ## Duktape Javascript Engine
 
-glasstack embeds the [duktape](https://duktape.org) javascript engine because it is easier to compile and easier to integrate with than complex engines like v8, yet it has robust support for ECMAScript 5 and partial support for ECMAScript 6+. We intentionally opted for a simpler non-JIT engine because we believe that the overall performance and maintainability of the application stack is better when performance-critical routines are written in C and when application developers understand the performance characteristics and tradeoffs of low-level code.
+glasstack embeds the [duktape](https://duktape.org) javascript engine because it is easier to compile and easier to integrate than complex engines like v8, yet it has robust support for ECMAScript 5 and partial support for ECMAScript 6+. We intentionally opted for a simpler non-JIT engine because we believe that the overall performance and maintainability of the application stack is better when performance-critical routines are written in C and when application developers understand the performance characteristics and tradeoffs of low-level code.
 
 ## Acknowledgments
 
