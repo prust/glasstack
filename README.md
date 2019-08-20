@@ -1,8 +1,8 @@
-# Neutrino
+![glasstack logo](glasstack-logo.png?raw=true "glasstack")
 
-A lightweight, zero-abstraction runtime for desktop applications.
+**glasstack** is a lightweight, zero abstraction cross-platform framework.
 
-Neutrino consists of a default set of C libraries and Javascript bindings for them so developers can write applications using Javascript and/or C. The following libraries are planned:
+The glasstack framework consists of a default set of C libraries and Javascript bindings for them so developers can create applications using Javascript and/or C. The following libraries are planned:
 
 * [x] [GLFW](https://www.glfw.org) (Desktop OpenGL support)
   * [ ] bindings via [duk-glfw](https://github.com/lzubiaur/duk-glfw)
@@ -16,6 +16,12 @@ Neutrino consists of a default set of C libraries and Javascript bindings for th
   * [ ] bindings
 * [ ] [GLFM](https://github.com/brackeen/glfm) (Mobile OpenGL support)
 
+## Transparency
+
+Most programming frameworks abstract low-level implementation details away from application developers. glasstack is different: its aim is to bring together a stack of powerful C libraries and to expose them to Javascript with faithful bindings that do not provide any abstraction other than what the library's API provides.
+
+Application developers are free to write and share abstractions on top of these bindings if they find them helpful, but the low-level details are available and developers are encouraged to understand how the low-level libraries work and to use this knowledge in their application design.
+
 ## Duktape Javascript Engine
 
 Neutrino embeds the [duktape](https://duktape.org) javascript engine because it is easier to compile and easier to integrate with than complex engines like v8, yet it has robust support for ECMAScript 5 and partial support for ECMAScript 6+. We intentionally opted for a simpler non-JIT engine because we believe that the overall performance and maintainability of the application stack is better when performance-critical routines are written in C and when application developers understand the performance characteristics and tradeoffs of low-level code.
@@ -27,3 +33,7 @@ Users should be able to easily:
 * remove libraries they don't want (by not including the DLL? or not setting compile macro flags?)
 * add alternative libraries (alternative GUI, DB, etc) by dropping in a C library and writing duktape bindings
 * update libraries by dropping in an updated version of the dynamic library (to patch bugs and security vulnerabilities)
+
+## Acknowledgments
+
+* glasstack logo ("stack") by Leyla Jacqueline from the Noun Project

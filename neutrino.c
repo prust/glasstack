@@ -1,8 +1,47 @@
-#include <glad/gl.h>
+#include "duktape.h"
+#include "duk_glfw.h"
+
+
+/*#include <glad/gl.h>
 #include <GLFW/glfw3.h>
-#include "linmath.h"
+#include "linmath.h"*/
 #include <stdlib.h>
 #include <stdio.h>
+
+DUK_LOCAL void fatal_handler(duk_context *ctx, duk_errcode_t code, const char *msg) {
+  fprintf(stderr, "Fatal error: %s [code: %d]", msg, code);
+  /* Fatal handler should not return. */
+  exit(EXIT_FAILURE);
+}
+
+int main(int argc, char *argv[]) {
+  duk_context *ctx = NULL;
+  char *script_filename = "glfw.js";
+
+  if (argc > 1)
+    script_filename = argv[1];
+
+  if ((ctx = duk_create_heap(NULL, NULL, NULL, NULL, fatal_handler)) == NULL) {
+    fprintf(stderr, "FATAL: Failed to create the Duktape context.\n");
+    goto finished;
+  }
+
+  /* Load the `GLFW` module */
+  duk_push_c_function(ctx, dukopen_glfw, 0);
+  duk_call(ctx, 0);
+  duk_put_global_string(ctx, "glfw");
+
+  if (duk_peval_file(ctx, script_filename) != 0) {
+    fprintf(stderr, "Error loading file '%s' : %s\n", script_filename, duk_safe_to_string(ctx, -1));
+    goto finished;
+  }
+
+finished:
+  duk_destroy_heap(ctx); /* No-op if ctx is NULL */
+  return EXIT_SUCCESS;
+}
+
+/*
 static const struct
 {
     float x, y;
@@ -39,9 +78,19 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GLFW_TRUE);
-}
+}*/
 int main(void)
 {
+
+    // Create Duktape heap...
+
+
+    // Load the module
+    duk_push_c_function(ctx, dukopen_glfw, 0);
+    duk_call(ctx, 0);
+    duk_put_global_string(ctx, "glfw");
+
+    /*
     GLFWwindow* window;
     GLuint vertex_buffer, vertex_shader, fragment_shader, program;
     GLint mvp_location, vpos_location, vcol_location;
@@ -104,5 +153,5 @@ int main(void)
     }
     glfwDestroyWindow(window);
     glfwTerminate();
-    exit(EXIT_SUCCESS);
+    exit(EXIT_SUCCESS);*/
 }
