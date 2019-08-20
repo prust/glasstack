@@ -10,10 +10,6 @@ Most programming frameworks abstract low-level implementation details away from 
 
 Application developers are free to write and share abstractions on top of these bindings if they find them helpful, but the low-level details are available and developers are encouraged to understand how the low-level libraries work and to use this knowledge in their application design.
 
-## Duktape Javascript Engine
-
-glasstack embeds the [duktape](https://duktape.org) javascript engine because it is easier to compile and easier to integrate with than complex engines like v8, yet it has robust support for ECMAScript 5 and partial support for ECMAScript 6+. We intentionally opted for a simpler non-JIT engine because we believe that the overall performance and maintainability of the application stack is better when performance-critical routines are written in C and when application developers understand the performance characteristics and tradeoffs of low-level code.
-
 ## Libraries
 
 The following libraries are planned:
@@ -35,6 +31,10 @@ Users should be able to easily:
 * remove libraries they don't want (by not including the DLL? or not setting compile macro flags?)
 * add alternative libraries (alternative GUI, DB, etc) by dropping in a C library and writing duktape bindings
 * update libraries by dropping in an updated version of the dynamic library (to patch bugs and security vulnerabilities)
+
+## Duktape Javascript Engine
+
+glasstack embeds the [duktape](https://duktape.org) javascript engine because it is easier to compile and easier to integrate with than complex engines like v8, yet it has robust support for ECMAScript 5 and partial support for ECMAScript 6+. We intentionally opted for a simpler non-JIT engine because we believe that the overall performance and maintainability of the application stack is better when performance-critical routines are written in C and when application developers understand the performance characteristics and tradeoffs of low-level code.
 
 ## Acknowledgments
 
