@@ -2,7 +2,7 @@
 
 **glasstack** is a lightweight, zero abstraction cross-platform framework.
 
-The glasstack framework consists of a default set of C libraries and Javascript bindings for them so developers can create applications using Javascript and/or C.
+The glasstack framework consists of a default set of C libraries and Javascript bindings, so developers can create cross-platform applications using Javascript and/or C.
 
 ## Transparency
 
