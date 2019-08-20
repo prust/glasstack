@@ -40,4 +40,4 @@ We intentionally opted for a simpler non-JIT engine because we believe that the 
 
 ## Acknowledgments
 
-* glasstack logo ("stack") by Leyla Jacqueline from the Noun Project
+* stack icon (used in the glasstack logo) by Leyla Jacqueline from the Noun Project
