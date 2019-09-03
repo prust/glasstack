@@ -8,7 +8,7 @@ The glasstack framework consists of a default set of C libraries and Javascript 
 
 Most programming frameworks abstract low-level implementation details away from application developers. glasstack is different: its aim is to bring together a stack of powerful C libraries and to expose them to Javascript with faithful bindings that do not provide any abstraction other than what the library's API provides.
 
-Application developers are free to write and share abstractions on top of these bindings if they find them helpful, but the low-level details are available and developers are encouraged to become familiar with the low-level APIs and their performance characteristics and to use this knowledge to guide the application design.
+Application developers are free to write and share abstractions on top of these bindings if they find them helpful, but the low-level details are available and developers are encouraged to become familiar with the low-level APIs and their performance characteristics and to use this knowledge to guide application design.
 
 ## Libraries
 
